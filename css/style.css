@@ -147,9 +147,9 @@ body {
   padding: 1em 2em;
   margin-top: 1em;
   border: none;
-  border-radius: 20px;
+  border-radius: 30px;
   background: #dadada;
-  font-size: 2em;
+  font-size: 1.5em;
   text-transform: uppercase;
   cursor: pointer;
 }
