@@ -25,7 +25,7 @@ const hidePopUp = () => {
 	popUpBackground.classList.add('hide')
 	popUpResult.classList.remove('win')
 	popUpResult.classList.remove('lose')
-	popUpResult.classList.remove('draw')
+	popUpResult.classList.remove('tie')
 	scoreAmount.textContent = score
 
 	if (activePlayer === 'O') {
@@ -47,9 +47,9 @@ const showPopUp = winner => {
 			score > 0 ? (score -= 1) : null
 			activePlayer = 'O'
 			break
-		case 'DRAW':
-			popUpResult.textContent = "It's a draw"
-			popUpResult.classList.add('draw')
+		case 'TIE':
+			popUpResult.textContent = "Tie"
+			popUpResult.classList.add('tie')
 			break
 	}
 
@@ -72,9 +72,9 @@ const checkWinner = () => {
 	}
 }
 
-const checkDraw = () => {
+const checkTie = () => {
     if (board.includes('') === false) {
-		showPopUp('DRAW')
+		showPopUp('TIE')
 		gameActive = false
 	}
 }
@@ -86,7 +86,7 @@ const fieldHandler = e => {
 	if (board[index] === '') {
 		fillField(index)
 		checkWinner()
-        gameActive === true ? checkDraw() : null
+        gameActive === true ? checkTie() : null
 		changePlayer()
 	}
 }
@@ -129,7 +129,7 @@ const computerMove = () => {
 		if (board[index] === '') {
 			fillField(index)
 			checkWinner()
-            gameActive === true ? checkDraw() : null
+            gameActive === true ? checkTie() : null
 			changePlayer()
 		} else {
 			computerMove()
