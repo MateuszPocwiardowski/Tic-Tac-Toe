@@ -126,9 +126,9 @@ body {
 			color: $green;
 		}
 
-        .draw {
-            color: $light;
-        }
+		.draw {
+			color: $light;
+		}
 
 		.lose {
 			color: $red;
@@ -148,4 +148,66 @@ body {
 
 .hide {
 	display: none;
+}
+
+@media (min-width: 768px) {
+	.wrapper {
+		.title {
+			font-size: 6em;
+		}
+
+		.score {
+			font-size: 3em;
+		}
+
+		.board {
+			grid-template-columns: 120px 120px 120px;
+			grid-template-rows: 120px 120px 120px;
+
+			&__field {
+				&--playerX::before,
+				&--playerX::after {
+					height: 120px;
+				}
+
+				&--playerX::before {
+					transform: translateX(60px) rotate(45deg);
+				}
+
+				&--playerX::after {
+					transform: translateX(60px) rotate(-45deg);
+				}
+
+				&--playerO::before,
+				&--playerO::after {
+					width: 90px;
+					height: 90px;
+					transform: translate(15px, 15px);
+				}
+
+				&--playerO::before {
+					background: $blue;
+				}
+	
+				&--playerO::after {
+					background: $light;
+					transform: translate(15px, 15px) scale(0.9);
+				}
+			}
+		}
+	}
+
+	.background {
+		.pop-up {
+			&__result {
+				font-size: 8em;
+			}
+
+			&__play-again-btn {
+				font-size: 2em;
+				margin-top: 1em;
+				border-radius: 40px;
+			}
+		}
+	}
 }
