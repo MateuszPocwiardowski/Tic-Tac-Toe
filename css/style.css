@@ -149,6 +149,7 @@ body {
   border: none;
   border-radius: 20px;
   background: #dadada;
+  font-size: 2em;
   text-transform: uppercase;
   cursor: pointer;
 }
