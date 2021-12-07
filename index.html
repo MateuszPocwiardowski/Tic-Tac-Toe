@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="background-image"></div>
+
+    <div class="wrapper">
+        <h2 class="title">Tic Tac Toe</h2>
+        <p class="score">Score: <span class="score__amount">0</span></p>
+        <div class="board">
+            <div class="board__field" data-set=0></div>
+            <div class="board__field" data-set=1></div>
+            <div class="board__field" data-set=2></div>
+            <div class="board__field" data-set=3></div>
+            <div class="board__field" data-set=4></div>
+            <div class="board__field" data-set=5></div>
+            <div class="board__field" data-set=6></div>
+            <div class="board__field" data-set=7></div>
+            <div class="board__field" data-set=8></div>
+        </div>
+    </div>
+
+    <div class="background">
+        <div class="pop-up">
+            <p class="pop-up__result win">You win!</p>
+            <button class="pop-up__play-again-btn">Play again</button>
+        </div>
+    </div>
+    
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

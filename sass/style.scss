@@ -1,0 +1,151 @@
+@import 'colors';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1em;
+	color: $light;
+}
+
+.background-image {
+	height: 100vh;
+	background-color: #485461;
+	background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+	z-index: 10;
+}
+
+.wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	z-index: 20;
+
+	.title {
+		font-size: 4em;
+	}
+
+	.score {
+		text-align: right;
+		font-size: 2em;
+	}
+
+	.board {
+		display: grid;
+		grid-template-columns: 80px 80px 80px;
+		grid-template-rows: 80px 80px 80px;
+		border: 1px solid $black;
+
+		&__field {
+			position: relative;
+			border: 1px solid $black;
+			background-color: $light;
+			transition: background-color 0.2s;
+			cursor: pointer;
+
+			&--playerX::before,
+			&--playerX::after {
+				position: absolute;
+				left: 0;
+				top: 0;
+				content: '';
+				width: 4px;
+				height: 80px;
+				background: $dark;
+			}
+
+			&--playerX::before {
+				transform: translateX(40px) rotate(45deg);
+			}
+
+			&--playerX::after {
+				transform: translateX(40px) rotate(-45deg);
+			}
+
+			&--playerO::before,
+			&--playerO::after {
+				position: absolute;
+				left: 0;
+				top: 0;
+				content: '';
+				width: 60px;
+				height: 60px;
+				border-radius: 100%;
+				transform: translate(10px, 10px);
+			}
+
+			&--playerO::before {
+				background: $blue;
+			}
+
+			&--playerO::after {
+				background: $light;
+				transform: translate(10px, 10px) scale(0.86);
+			}
+
+			&:hover {
+				background-color: $gray;
+			}
+		}
+	}
+}
+
+.background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background-color: rgba($color: $black, $alpha: 0.85);
+	text-align: center;
+	z-index: 20;
+
+	.pop-up {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 22;
+
+		&__result {
+			font-size: 3em;
+		}
+
+		.win {
+			color: $green;
+		}
+
+        .draw {
+            color: $light;
+        }
+
+		.lose {
+			color: $red;
+		}
+
+		&__play-again-btn {
+			padding: 1em 2em;
+			margin-top: 1em;
+			border: none;
+			border-radius: 20px;
+			background: $light;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+	}
+}
+
+.hide {
+	display: none;
+}
