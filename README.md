@@ -11,6 +11,9 @@ $ start index.html
 ## Live
 https://mp-tic-tac-toe.netlify.app/
 
+## Screenshot
+![Alt text](/img/game.png?raw=true)
+
 ## Controls
 1. Click on any field to place symbol.
 2. After each player's move, the computer makes its move.
